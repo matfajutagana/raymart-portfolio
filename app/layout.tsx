@@ -62,6 +62,9 @@ export const metadata: Metadata = {
     apple: '/apple-touch-icon.png',
     shortcut: '/favicon-16x16.png',
   },
+  verification: {
+    google: 'G0nRNtpVJhmv_i5GOclwNxO8pUqwswAZcShQ8Kw0g-0',
+  },
 }
 
 export default function RootLayout({
