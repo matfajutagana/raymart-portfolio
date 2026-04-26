@@ -5,6 +5,7 @@ import Projects from '@/components/sections/Projects'
 import TechStack from '@/components/sections/TechStack'
 import Publications from '@/components/sections/Publications'
 import Contact from '@/components/sections/Contact'
+import SpotifyWidget from '@/components/ui/SpotifyWidget'
 
 export default function Home() {
   return (
@@ -32,6 +33,7 @@ export default function Home() {
           <Contact />
         </div>
       </div>
+      <SpotifyWidget />
     </main>
   )
 }
