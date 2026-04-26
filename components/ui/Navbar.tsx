@@ -27,12 +27,18 @@ export default function Navbar() {
   const handleNavClick = (href: string): void => {
     setIsMenuOpen(false)
     const element = document.querySelector(href)
-    element?.scrollIntoView({ behavior: 'smooth' })
+    if (element) {
+      const offset = 80
+      const top = element.getBoundingClientRect().top + window.scrollY - offset
+      window.scrollTo({ top, behavior: 'smooth' })
+    }
   }
 
   const toggleTheme = (): void => {
     setTheme(theme === 'dark' ? 'light' : 'dark')
   }
+
+  const isDark = mounted && theme === 'dark'
 
   return (
     <header
@@ -46,7 +52,7 @@ export default function Navbar() {
         {/* Logo */}
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="text-sm font-semibold tracking-tight text-gray-900 dark:text-white"
+          className="text-sm font-bold tracking-tight text-gray-900 dark:text-white"
         >
           RF<span className="text-blue-600">.</span>
         </button>
@@ -57,7 +63,7 @@ export default function Navbar() {
             <li key={item.id}>
               <button
                 onClick={() => handleNavClick(item.href)}
-                className="text-sm text-gray-500 transition-colors duration-200 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+                className="text-sm font-medium text-gray-500 transition-colors duration-200 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
               >
                 {item.label}
               </button>
@@ -65,16 +71,35 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Right side — theme toggle + mobile menu */}
+        {/* Right side — toggle + mobile menu */}
         <div className="flex items-center gap-3">
-          {/* Theme Toggle */}
+          {/* Theme Toggle Switch */}
           {mounted && (
             <button
               onClick={toggleTheme}
-              className="rounded-lg p-2 text-gray-500 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white"
               aria-label="Toggle theme"
+              className={`relative flex h-7 w-14 items-center rounded-full border transition-all duration-300 ${
+                isDark
+                  ? 'border-gray-600 bg-gray-700'
+                  : 'border-gray-200 bg-gray-100'
+              }`}
             >
-              {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
+              {/* Icons */}
+              <span className="absolute left-1.5 flex items-center justify-center text-yellow-400">
+                <Sun size={12} />
+              </span>
+              <span className="absolute right-1.5 flex items-center justify-center text-blue-400">
+                <Moon size={12} />
+              </span>
+
+              {/* Sliding pill */}
+              <span
+                className={`absolute h-5 w-5 rounded-full shadow-sm transition-all duration-300 ${
+                  isDark
+                    ? 'translate-x-7 bg-gray-200'
+                    : 'translate-x-1 bg-white'
+                }`}
+              />
             </button>
           )}
 
@@ -97,7 +122,7 @@ export default function Navbar() {
               <li key={item.id}>
                 <button
                   onClick={() => handleNavClick(item.href)}
-                  className="text-sm text-gray-600 transition-colors duration-200 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+                  className="text-sm font-medium text-gray-600 transition-colors duration-200 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
                 >
                   {item.label}
                 </button>

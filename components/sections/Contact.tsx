@@ -130,8 +130,7 @@ export default function Contact() {
             Let&apos;s work together
           </h2>
           <p className="max-w-xl text-sm leading-relaxed text-gray-500 dark:text-gray-400">
-            Open to full-time software engineering opportunities in Canada. Feel
-            free to reach out.
+            Have a project in mind or want to collaborate? Let's talk.
           </p>
         </motion.div>
 
@@ -145,9 +144,7 @@ export default function Contact() {
           className="mb-6 flex items-center gap-2 text-xs text-gray-400 dark:text-gray-500"
         >
           <MapPin size={12} />
-          <span>
-            Greater Toronto Area — open to remote and hybrid roles across Canada
-          </span>
+          <span>Greater Toronto Area</span>
         </motion.div>
 
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">

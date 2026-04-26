@@ -26,15 +26,15 @@ export default function Projects() {
           whileInView="visible"
           viewport={{ once: true }}
           custom={0}
-          className="mb-6 flex items-center gap-2"
+          className="mb-5 flex items-center gap-2"
         >
-          <FolderOpen size={16} className="text-blue-600" />
-          <h2 className="text-lg font-bold text-gray-900 dark:text-white">
+          <FolderOpen size={18} className="text-blue-600" />
+          <h2 className="text-xl font-bold text-gray-900 dark:text-white">
             Projects
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           {projects.map((project: Project, index: number) => (
             <motion.a
               key={project.id}
@@ -46,10 +46,10 @@ export default function Projects() {
               whileInView="visible"
               viewport={{ once: true }}
               custom={index * 0.1}
-              className="group overflow-hidden rounded-xl border border-gray-100 bg-white transition-all duration-200 hover:border-blue-100 hover:shadow-md dark:border-gray-700 dark:bg-gray-800 dark:hover:border-blue-800"
+              className="group overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition-all duration-200 hover:border-blue-200 hover:shadow-md dark:border-gray-700 dark:bg-gray-800 dark:hover:border-blue-800"
             >
               {project.image && (
-                <div className="relative h-32 w-full overflow-hidden bg-gray-50 dark:bg-gray-700">
+                <div className="relative h-32 w-full overflow-hidden bg-gray-100 dark:bg-gray-700">
                   <Image
                     src={project.image}
                     alt={project.name}
@@ -60,7 +60,7 @@ export default function Projects() {
               )}
               <div className="p-4">
                 <div className="mb-1.5 flex items-start justify-between">
-                  <h3 className="text-sm font-semibold text-gray-900 transition-colors duration-200 group-hover:text-blue-600 dark:text-white">
+                  <h3 className="text-sm font-bold text-gray-900 transition-colors duration-200 group-hover:text-blue-600 dark:text-white">
                     {project.name}
                   </h3>
                   <ExternalLink
@@ -75,7 +75,7 @@ export default function Projects() {
                   {project.tags.map((tag: string) => (
                     <span
                       key={tag}
-                      className="rounded-full border border-gray-100 bg-gray-50 px-2 py-0.5 text-xs text-gray-500 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-400"
+                      className="rounded-full border border-gray-200 bg-gray-50 px-2 py-0.5 text-xs font-medium text-gray-500 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-400"
                     >
                       {tag}
                     </span>
