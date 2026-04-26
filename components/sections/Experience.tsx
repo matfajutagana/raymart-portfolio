@@ -25,10 +25,10 @@ export default function Experience() {
           whileInView="visible"
           viewport={{ once: true }}
           custom={0}
-          className="mb-6 flex items-center gap-2"
+          className="mb-5 flex items-center gap-2"
         >
-          <Briefcase size={16} className="text-blue-600" />
-          <h2 className="text-lg font-bold text-gray-900 dark:text-white">
+          <Briefcase size={18} className="text-blue-600" />
+          <h2 className="text-xl font-bold text-gray-900 dark:text-white">
             Experience
           </h2>
         </motion.div>
@@ -42,18 +42,18 @@ export default function Experience() {
               whileInView="visible"
               viewport={{ once: true }}
               custom={index * 0.1}
-              className="rounded-xl border border-gray-100 bg-white p-5 dark:border-gray-700 dark:bg-gray-800"
+              className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm dark:border-gray-700 dark:bg-gray-800"
             >
               <div className="mb-3 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
                 <div>
-                  <h3 className="text-sm font-semibold text-gray-900 dark:text-white">
+                  <h3 className="text-base font-bold text-gray-900 dark:text-white">
                     {exp.role}
                   </h3>
-                  <p className="text-xs font-medium text-blue-600">
+                  <p className="text-sm font-semibold text-blue-600">
                     {exp.company}
                   </p>
                 </div>
-                <span className="whitespace-nowrap text-xs text-gray-400 dark:text-gray-500">
+                <span className="whitespace-nowrap text-xs font-medium text-gray-400 dark:text-gray-500">
                   {exp.period}
                 </span>
               </div>
@@ -61,9 +61,9 @@ export default function Experience() {
                 {exp.description.map((item: string, i: number) => (
                   <li
                     key={i}
-                    className="flex items-start gap-2 text-xs leading-relaxed text-gray-600 dark:text-gray-300"
+                    className="flex items-start gap-2 text-sm leading-relaxed text-gray-600 dark:text-gray-300"
                   >
-                    <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-gray-400 dark:bg-gray-500" />
+                    <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-blue-400" />
                     {item}
                   </li>
                 ))}
