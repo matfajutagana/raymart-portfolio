@@ -91,7 +91,7 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
           custom={0.2}
-          className="mb-7 max-w-2xl text-base leading-relaxed text-gray-600 dark:text-gray-300"
+          className="mb-8 max-w-2xl text-base leading-[1.8] text-gray-800 dark:text-gray-200"
         >
           Full-Stack Developer with 4+ years of experience building scalable
           SaaS platforms and enterprise web applications. Specialized in backend

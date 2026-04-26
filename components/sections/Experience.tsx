@@ -61,7 +61,7 @@ export default function Experience() {
                 {exp.description.map((item: string, i: number) => (
                   <li
                     key={i}
-                    className="flex items-start gap-2 text-sm leading-relaxed text-gray-600 dark:text-gray-300"
+                    className="flex items-start gap-2 text-sm leading-relaxed text-gray-800 dark:text-gray-200"
                   >
                     <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-blue-400" />
                     {item}
