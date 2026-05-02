@@ -64,6 +64,15 @@ export const experiences: Experience[] = [
 
 export const projects: Project[] = [
   {
+    id: 'whodoyoustan',
+    name: 'Who Do You Stan?',
+    description:
+      'A music guessing web app where users choose an artist, listen to short song previews, and try to identify tracks to earn a fan ranking.',
+    url: 'https://whodoyoustan.com/',
+    tags: ['Next.js', 'TypeScript', 'Tailwind CSS'],
+    image: '/images/projects/whodoyoustan.png',
+  },
+  {
     id: 'mysterymeals',
     name: 'MysteryMeals.ca',
     description:
